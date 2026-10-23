@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f1e8">
+  <meta name="description" content="PocketPacts. Your commitments, kept close. Review the promises and requests in your conversations with local AI.">
+  <title>PocketPacts | Your commitments, kept close.</title>
+  <link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conversation">Skip to conversation</a>
+  <div class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="PocketPacts home">
+        <svg class="brand-mark" width="42" height="46" viewBox="0 0 42 46" fill="none" aria-hidden="true"><path d="M7 6h28v25c0 5-14 10-14 10S7 36 7 31V6Z" stroke="currentColor" stroke-width="1.6"/><path d="M11 12h20v18c0 3-10 7-10 7s-10-4-10-7V12Z" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 3"/><path d="M26 2h7v16l-3.5-3-3.5 3V2Z" fill="#b6412c"/></svg>
+        <span><span class="brand-name">PocketPacts<span class="brand-dot">.</span></span><span class="brand-tagline">Your commitments, kept close.</span></span>
+      </a>
+      <nav class="header-links" aria-label="Page navigation"><a href="#model-heading">Local helper</a><a href="#review-heading">Your review</a><a href="https://github.com/victorchimakanu/pocketpacts">Source <span aria-hidden="true">↗</span></a></nav>
+    </header>
+
+    <main>
+      <div class="page-heading">
+        <div><p class="eyebrow">A little room for what matters</p><h1>Keep your word.<br class="mobile-break"> Clear your head.</h1></div>
+        <p class="local-note"><svg width="16" height="18" viewBox="0 0 16 18" fill="none" aria-hidden="true"><rect x="2.5" y="7" width="11" height="9" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M5 7V4a3 3 0 0 1 6 0v3" stroke="currentColor" stroke-width="1.5"/></svg> Your conversations stay on this device.</p>
+      </div>
+
+      <div class="workbench">
+        <div class="setup-column">
+          <section class="editor-paper" aria-labelledby="input-heading">
+            <div class="section-heading"><div><p class="eyebrow">Start with a conversation</p><h2 id="input-heading">What’s on your plate?</h2></div><svg class="section-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M7 4h14v20l-7-4-7 4V4Z" stroke="currentColor" stroke-width="1.6"/><path d="M11 9h6m-6 4h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+            <p class="section-description">Bring the conversation. We’ll help you find what needs a second look.</p>
+            <div class="import-actions"><button id="sample" class="button-secondary"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 2h8v12H4V2Zm2 3h4M6 8h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Try a sample</button><label class="file-label" for="file"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 11V2m0 0L5 5m3-3 3 3M3 10v4h10v-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Import JSON<input id="file" type="file" accept=".json,application/json"></label></div>
+            <p id="input-label" class="input-note">No conversation added yet. The sample is fictional.</p>
+            <label for="viewer">Which sender are you?</label>
+            <input id="viewer" maxlength="80" placeholder="Your name in the conversation" autocomplete="off">
+            <label for="conversation" class="conversation-label">Conversation <span>Paste text or JSON</span></label>
+            <textarea id="conversation" rows="8" maxlength="60000" spellcheck="false" placeholder="Alex: Can you send the final draft?&#10;Jamie: I’ll have it ready this afternoon."></textarea>
+            <details class="context-details"><summary>Add context or check the format</summary><div class="disclosure-content"><label for="context">Thread context, optional</label><input id="context" maxlength="600" placeholder="We’re getting ready for a Friday demo."><p class="hint">Use one <code>Sender: message</code> line per turn, or JSON like <code>[{"sender":"Alex","text":"Message"}]</code>. Optional fields: id and timestamp. Up to 30 messages and 2,000 characters per message.</p></div></details>
+            <div class="analysis-actions"><button id="analyze" class="button-primary" disabled>Review conversation <span aria-hidden="true">↗</span></button><button id="stop" class="button-quiet" disabled>Stop</button></div>
+            <p class="editor-footnote">You decide what to keep. Nothing gets sent.</p>
+          </section>
+
+          <section class="model-panel" aria-labelledby="model-heading">
+            <div class="model-panel-heading"><div class="model-symbol" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="4" y="4" width="12" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 17h6m-3-3v3M7 8h6m-6 3h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><h2 id="model-heading">Your local helper</h2><p>Laya · Runs on this device</p></div></div>
+            <p id="model-status" class="model-status" role="status">Checking local setup…</p>
+            <div class="model-actions"><button id="load" class="button-secondary">Load Laya</button><button id="unload" class="button-quiet" disabled>Unload</button></div>
+            <details class="model-settings"><summary>Model setup &amp; advanced settings</summary><div class="disclosure-content"><p>The first load downloads about 348 MB. After that, the model stays in your local cache. No chat account or cloud model is used.</p><label for="model-path">Local Laya GGUF path, optional</label><input id="model-path" placeholder="Leave blank to use the catalog model" spellcheck="false"><label for="device">Requested device</label><select id="device"><option value="cpu">CPU</option><option value="gpu">GPU</option></select><p class="hint">Default: Laya Multilingual 322M Q8. The catalog file is 348,425,664 bytes. You can also use an existing local Laya GGUF checkpoint. A GPU preference does not guarantee a particular backend.</p></div></details>
+          </section>
+        </div>
+
+        <section class="review-paper" aria-labelledby="review-heading">
+          <div class="review-heading"><div><p class="eyebrow">The things worth keeping</p><h2 id="review-heading">Your review</h2></div><span class="paper-label">Yours to decide</span></div>
+          <div class="status-strip"><span class="status-dot" aria-hidden="true"></span><p id="status" role="status" aria-live="polite">Add a conversation, then load Laya to begin.</p></div>
+          <p id="error" role="alert" hidden></p>
+          <div id="empty-review" class="empty-review">
+            <div class="empty-illustration" aria-hidden="true"><svg width="106" height="118" viewBox="0 0 106 118" fill="none"><path d="M20 18h66v73c0 8-33 21-33 21S20 99 20 91V18Z" stroke="currentColor" stroke-width="1.5"/><path d="M26 25h54v64c0 6-27 16-27 16S26 95 26 89V25Z" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4"/><path d="M62 9h13v36l-6.5-5-6.5 5V9Z" fill="#b6412c"/><path d="M35 56h27M35 67h36M35 78h22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <p class="eyebrow">One less thing to carry</p>
+            <h3>A place for the<br>“I said I would.”</h3>
+            <p>Requests, promises, and blockers can hide in a busy thread. Add a conversation to find the moments worth revisiting.</p>
+            <div class="empty-divider"></div>
+            <p class="empty-reassurance">Every suggestion keeps its original message.<br>You always get the final word.</p>
+          </div>
+          <div id="results-section" hidden aria-labelledby="results-heading">
+            <div class="result-intro"><h3 id="results-heading">A second look</h3><p id="run-info"></p></div>
+            <details class="score-help"><summary>What do the probabilities mean?</summary><p>These are model scores, not measured accuracy. Scores between 35% and 65% are marked for review. These are starting thresholds, not validated action rules. Read the original message before acting.</p></details>
+            <div class="review-toolbar"><div class="filter-field"><label for="filter">Show</label><select id="filter"><option value="active">Active candidates</option><option value="review">Needs review</option><option value="flagged">Flagged candidates</option><option value="all">All messages</option><option value="dismissed">Dismissed</option></select></div><button id="restore" class="button-quiet" disabled>Restore dismissed</button><button id="export" class="button-secondary" disabled>Export JSON <span aria-hidden="true">↗</span></button></div>
+            <p id="counts" class="counts"></p>
+            <div id="results"></div>
+            <details id="source-section" class="source-section"><summary>Original conversation</summary><ol id="source"></ol></details>
+          </div>
+          <div class="review-footer"><span>Private by design.</span><span>Powered by QVAC 0.22</span></div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer"><span>PocketPacts</span><span>A small home for your follow-through.</span></footer>
+  </div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

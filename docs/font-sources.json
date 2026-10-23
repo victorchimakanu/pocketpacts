@@ -1,0 +1,16 @@
+[
+  {
+    "family": "fraunces",
+    "source_css": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&display=swap",
+    "file_url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2",
+    "license_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/fraunces/OFL.txt",
+    "bytes": 67388
+  },
+  {
+    "family": "dm-sans",
+    "source_css": "https://fonts.googleapis.com/css2?family=DM%20Sans:opsz,wght@9..40,100..1000&display=swap",
+    "file_url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Hp2ywxg089UriCZOIHTWEBlw.woff2",
+    "license_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/dmsans/OFL.txt",
+    "bytes": 62556
+  }
+]

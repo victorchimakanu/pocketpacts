@@ -1,0 +1,408 @@
+{
+  "meta": {
+    "name": "PocketPacts: a personal pocket notebook",
+    "description": "Original user-authorized design direction for a local commitments review workbench. Warm paper, thoughtful editorial type, plum ink, and a coral bookmark accent express personal ownership and calm attention. This is designed from the product purpose, not extracted from a supplied visual reference.",
+    "source_references": [
+      "Original PocketPacts product direction: personal commitments, warm paper, plum ink, and a coral bookmark accent."
+    ],
+    "created_at": "2026-10-22"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "analogous",
+      "primary": {
+        "hex": "#382634",
+        "role": "Plum ink for brand, headings, body, and primary action surfaces"
+      },
+      "secondary": {
+        "hex": "#705666",
+        "role": "Muted plum for secondary content and quiet details"
+      },
+      "accent": {
+        "hex": "#b6412c",
+        "role": "Vermilion bookmark, emphasized text, selected states, and focus"
+      },
+      "neutral": {
+        "scale": [
+          "#fffdf8",
+          "#fbf8f1",
+          "#f6f1e8",
+          "#e9e0d3",
+          "#d5c8b9",
+          "#a89483",
+          "#9b8675",
+          "#76685e",
+          "#382634"
+        ],
+        "usage": "Warm light surfaces with #382634 foreground; #705666 secondary text remains AA on paper. Borders use #d5c8b9. Form field boundaries use #9b8675 to exceed 3:1 against their paper surface."
+      },
+      "semantic": {
+        "success": "#33664a",
+        "warning": "#82550c",
+        "error": "#9f2f2f",
+        "info": "#705666"
+      },
+      "surface": {
+        "background": "#f6f1e8",
+        "card": "#fffdf8",
+        "elevated": "#fbf8f1"
+      },
+      "contrast_strategy": "Dark plum on warm paper. Accent #b6412c is used as AA text on light surfaces or as a solid control with #fffdf8 text. State meaning always has text."
+    },
+    "typography": {
+      "type_scale": {
+        "display": {
+          "size": "42px",
+          "weight": 500,
+          "line_height": "1.12",
+          "tracking": "-0.035em"
+        },
+        "heading_1": {
+          "size": "34px",
+          "weight": 500,
+          "line_height": "1.16",
+          "tracking": "-0.025em"
+        },
+        "heading_2": {
+          "size": "26px",
+          "weight": 500,
+          "line_height": "1.2",
+          "tracking": "-0.02em"
+        },
+        "heading_3": {
+          "size": "19px",
+          "weight": 600,
+          "line_height": "1.3",
+          "tracking": "-0.01em"
+        },
+        "body": {
+          "size": "15px",
+          "weight": 400,
+          "line_height": "1.55",
+          "tracking": "0"
+        },
+        "body_small": {
+          "size": "13px",
+          "weight": 400,
+          "line_height": "1.5",
+          "tracking": "0"
+        },
+        "caption": {
+          "size": "12px",
+          "weight": 500,
+          "line_height": "1.45",
+          "tracking": "0"
+        },
+        "overline": {
+          "size": "11px",
+          "weight": 600,
+          "line_height": "1.4",
+          "tracking": "0.12em"
+        }
+      },
+      "font_families": {
+        "heading": "Fraunces, Georgia, serif",
+        "body": "DM Sans, system-ui, sans-serif",
+        "mono": "ui-monospace, SFMono-Regular, Consolas, monospace"
+      },
+      "font_style_notes": "Locally hosted variable Fraunces gives the notebook a warm editorial voice; DM Sans keeps forms and review content clear. Tabular numerals for probabilities."
+    },
+    "spacing": {
+      "base_unit": "4px",
+      "scale": [
+        "4px",
+        "8px",
+        "12px",
+        "16px",
+        "20px",
+        "24px",
+        "32px",
+        "40px",
+        "48px",
+        "64px"
+      ],
+      "content_density": "comfortable",
+      "section_rhythm": "24px between workbench sections, 16px between related controls, 32px around the central review space."
+    },
+    "layout": {
+      "grid_system": "Two-column workbench with a compact conversation column and a wider review column. Single-column reading order below 900px.",
+      "max_content_width": "1440px",
+      "columns": "minmax(330px, 0.9fr) minmax(0, 1.25fr)",
+      "gutter": "32px",
+      "breakpoints": {
+        "mobile": "560px",
+        "stacked": "900px",
+        "wide": "1280px"
+      },
+      "alignment_tendency": "Left aligned, asymmetric editorial grid"
+    },
+    "shape": {
+      "border_radius": {
+        "small": "6px",
+        "medium": "12px",
+        "large": "20px",
+        "pill": "999px"
+      },
+      "border_usage": "Fine 1px warm borders on fields, papers, and quiet controls; primary button uses solid ink.",
+      "divider_style": "Single warm rules with one short coral bookmark tab."
+    },
+    "elevation": {
+      "shadow_style": "Very low paper shadow only",
+      "levels": {
+        "low": "0 2px 3px rgb(56 38 52 / 3%)",
+        "medium": "0 8px 24px rgb(56 38 52 / 6%)",
+        "high": "none"
+      },
+      "depth_cues": "Light paper contrast and thin outlines, no floating panels or blur."
+    },
+    "iconography": {
+      "style": "Small geometric line symbols and one authored stitched pocket brand mark",
+      "stroke_weight": "1.6px",
+      "size_scale": [
+        "16px",
+        "20px",
+        "24px",
+        "32px"
+      ],
+      "preferred_set": "Authored inline SVG, no external icon library"
+    },
+    "motion": {
+      "easing": "cubic-bezier(0.2, 0, 0, 1)",
+      "duration_scale": {
+        "micro": "140ms",
+        "normal": "220ms",
+        "macro": "320ms"
+      },
+      "entrance_pattern": "None for page content; review scroll is functional and respects reduced motion.",
+      "exit_pattern": "Immediate state replacement",
+      "philosophy": "Minimal functional transitions on control color and focus; no continuous motion"
+    },
+    "components": {
+      "button_style": "44px minimum height, ink primary, warm outlined secondary, text quiet actions; no bounce or displacement.",
+      "input_style": "Warm white fields with a 1px #9b8675 border, 12px padding, visible labels, and vermilion focus outline.",
+      "card_style": "Review cards are flat paper entries separated by rules; conversation editor is a bounded paper panel.",
+      "navigation_pattern": "Compact brand header, actual section anchors, and working link back to the local app collection.",
+      "modal_style": "No modal. Advanced settings and source transcript use native disclosures.",
+      "list_style": "Review rows retain verbatim source, sender, category text, four probability labels, review reasons, and individual dismiss/restore.",
+      "component_notes": "Import is first. Local model controls are discoverable under the editor; advanced model path and device live in a disclosure. Empty review never simulates inference; sample is explicitly synthetic."
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": [
+        "personal",
+        "calm",
+        "warm",
+        "attentive"
+      ],
+      "visual_metaphor": "A pocket notebook with a stitched cover and a small bookmark for what needs a second look.",
+      "era_influence": "Modern stationery and quiet editorial layouts",
+      "genre": "Personal notebook workbench",
+      "personality_traits": [
+        "considerate",
+        "honest",
+        "organized",
+        "unhurried"
+      ],
+      "adjectives": [
+        "tactile",
+        "clear",
+        "intimate",
+        "grounded"
+      ]
+    },
+    "visual_language": {
+      "complexity": "moderate",
+      "ornamentation": "Subtle pocket mark and short bookmark accent only",
+      "whitespace_usage": "Breathing room around source messages and review controls; compact secondary setup details.",
+      "visual_weight_distribution": "Conversation setup on the left, larger quiet review paper on the right.",
+      "focal_strategy": "Primary import task and review content; technical setup is secondary.",
+      "contrast_level": "High text contrast with low surface contrast",
+      "texture_usage": "Solid warm paper color only; no noise or simulated distress"
+    },
+    "composition": {
+      "hierarchy_method": "Serif headings, restrained scale contrast, fine rules, and spatial grouping",
+      "balance_type": "asymmetric",
+      "flow_direction": "Header to conversation import to local analysis to source review",
+      "grouping_strategy": "Related fields in shared paper sections; disclosure for optional context and technical controls.",
+      "negative_space_role": "Give an empty review a calm place to begin and let source text stay readable."
+    },
+    "imagery": {
+      "photo_treatment": "No photography",
+      "illustration_style": "A small original pocket outline and simple static bookmark lines",
+      "graphic_elements": "Pocket logo, section rules, restrained coral bookmark",
+      "pattern_usage": "No repeating pattern; no ruled texture behind text.",
+      "image_shape": "Small inline SVG marks only"
+    },
+    "interaction_feel": {
+      "feedback_style": "Plain status sentences, visible progress, specific error message, retained source context",
+      "hover_behavior": "Subtle ink and paper color change on actual clickable controls",
+      "transition_personality": "fade-subtle",
+      "loading_style": "Real download percentage and completed message count, with working Stop control",
+      "microinteraction_density": "low"
+    },
+    "brand_voice_in_ui": {
+      "tone": "Personal, calm, direct, and honest about uncertainty",
+      "formality": "Conversational plain English",
+      "cta_style": "Direct verbs: Try a sample, Import JSON, Review conversation",
+      "empty_state_approach": "Show where a real review will appear. Invite a clearly synthetic sample without inventing output.",
+      "error_tone": "Specific, actionable, quiet; never imply failed analysis produced new results"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "none",
+      "performance_tier": "lightweight",
+      "fallback_strategy": "Static CSS and native controls always work. Reduced motion disables transitions and smooth scrolling.",
+      "primary_technology": "CSS only"
+    },
+    "background_effects": {
+      "type": "none",
+      "description": "Solid warm paper background; effects disabled.",
+      "technology": "none",
+      "params": {
+        "color_palette": [
+          "#f6f1e8"
+        ],
+        "speed": 0,
+        "density": 0,
+        "opacity": 0,
+        "blend_mode": "normal"
+      }
+    },
+    "particle_systems": {
+      "enabled": false,
+      "type": "none",
+      "description": "No particles.",
+      "technology": "none",
+      "params": {
+        "count": 0,
+        "shape": "none",
+        "size_range": [
+          0,
+          0
+        ],
+        "movement_pattern": "none",
+        "color_behavior": "none",
+        "interaction": "none",
+        "spawn_area": "none"
+      }
+    },
+    "3d_elements": {
+      "enabled": false,
+      "type": "none",
+      "description": "No 3D content.",
+      "technology": "none",
+      "params": {
+        "renderer": "none",
+        "lighting": "none",
+        "camera": "none",
+        "materials": "none",
+        "geometry": "none",
+        "post_processing": [],
+        "interaction_model": "none"
+      }
+    },
+    "shader_effects": {
+      "enabled": false,
+      "type": "none",
+      "description": "No shaders.",
+      "technology": "none",
+      "params": {
+        "uniforms": {},
+        "vertex_manipulation": "none",
+        "fragment_output": "none",
+        "noise_type": "none",
+        "distortion": "none"
+      }
+    },
+    "scroll_effects": {
+      "parallax": {
+        "enabled": false,
+        "layers": 0,
+        "depth_range": 0,
+        "speed_curve": "none"
+      },
+      "scroll_triggered_animations": {
+        "enabled": false,
+        "trigger_points": [],
+        "animation_type": "none",
+        "scrub_behavior": "none"
+      },
+      "scroll_morphing": {
+        "enabled": false,
+        "description": "No scroll-driven visual effects."
+      }
+    },
+    "text_effects": {
+      "type": "none",
+      "description": "Static live text.",
+      "technology": "none",
+      "params": {
+        "split_strategy": "none",
+        "animation_per_unit": "none",
+        "stagger": 0,
+        "effect_style": "none"
+      }
+    },
+    "cursor_effects": {
+      "enabled": false,
+      "type": "none",
+      "description": "Native cursor retained.",
+      "params": {
+        "shape": "none",
+        "size": 0,
+        "blend_mode": "normal",
+        "trail": "none",
+        "interaction_zone": "none"
+      }
+    },
+    "image_effects": {
+      "type": "none",
+      "description": "No image effects.",
+      "technology": "none",
+      "params": {
+        "filter_pipeline": [],
+        "hover_transform": "none",
+        "reveal_animation": "none",
+        "distortion_type": "none"
+      }
+    },
+    "glassmorphism_neumorphism": {
+      "enabled": false,
+      "style": "none",
+      "params": {
+        "blur_radius": 0,
+        "transparency": 0,
+        "border_treatment": "ordinary 1px paper border",
+        "shadow_type": "none",
+        "light_source_angle": 0
+      }
+    },
+    "canvas_drawings": {
+      "enabled": false,
+      "type": "none",
+      "description": "No canvas.",
+      "technology": "none",
+      "params": {
+        "draw_method": "none",
+        "animation_loop": false,
+        "color_scheme": "none",
+        "responsiveness": "none",
+        "interaction": "none"
+      }
+    },
+    "svg_animations": {
+      "enabled": false,
+      "type": "none",
+      "description": "Small static SVG line icons only.",
+      "params": {
+        "animation_method": "none",
+        "path_morphing": false,
+        "stroke_animation": false,
+        "filter_effects": false
+      }
+    },
+    "composite_notes": "All special effects deliberately disabled. Personal ownership comes from quiet paper, local fonts, original static iconography, and a clear working review flow. No external image references were supplied, so no palette measurement is claimed."
+  }
+}

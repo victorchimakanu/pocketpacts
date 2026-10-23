@@ -1,0 +1,10 @@
+{
+  "messages": [
+    { "id": "s1", "sender": "Jamie", "text": "Alex, can you send the demo recording before 16:00?", "timestamp": "2026-10-21T10:00:00Z" },
+    { "id": "s2", "sender": "Alex", "text": "Yes. I will send the recording by 15:00.", "timestamp": "2026-10-21T10:03:00Z" },
+    { "id": "s3", "sender": "Morgan", "text": "The demo upload is blocked. The storage service returns an access denied error.", "timestamp": "2026-10-21T11:00:00Z" },
+    { "id": "s4", "sender": "Jamie", "text": "Alex, could you review the two pricing options and choose one today?", "timestamp": "2026-10-21T11:10:00Z" },
+    { "id": "s5", "sender": "Alex", "text": "Here is the recording. The storage issue is fixed too.", "timestamp": "2026-10-21T14:30:00Z" },
+    { "id": "s6", "sender": "Morgan", "text": "Thanks, the recording opens now. Maybe we can also shorten the title?", "timestamp": "2026-10-21T14:32:00Z" }
+  ]
+}
